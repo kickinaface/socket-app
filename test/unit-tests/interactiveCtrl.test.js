@@ -28,7 +28,6 @@
                             },
                             on: function (type, data) {
                                 var defer = $q.defer();
-                                console.log(type, data);
                                 if (type === 'updateUsers') {
                                     scope.users = [{
                                         email: 'chris@ccarteronline.com',

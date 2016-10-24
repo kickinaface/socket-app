@@ -25,7 +25,7 @@ module.exports = function(config) {
         'public/js/*/!(*.test).js': ['coverage']
     },
 
-    reporters: ['progress', 'coverage', 'spec'],
+    reporters: ['coverage', 'spec'],
 
     plugins: [
         'karma-jasmine',

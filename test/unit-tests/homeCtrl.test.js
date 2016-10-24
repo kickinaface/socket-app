@@ -8,7 +8,7 @@
 
         beforeEach(inject(function ($rootScope, $controller) {
             scope = $rootScope.$new();
-            vm = $controller('HomeCtrl', {
+            $controller('HomeCtrl', {
                 $scope: scope
             });
         }));

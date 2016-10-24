@@ -12,14 +12,14 @@
             if (!localStorage.getItem('settings')) {
                 $scope.fnamePlaceholder = 'John';
                 $scope.lnamePlaceholder = 'Doe';
-                $scope.emailPlaceHolder = 'jdoe@someemail.com';
+                $scope.emailPlaceholder = 'jdoe@someemail.com';
             } else {
                 var savedPerson = localStorage.getItem('settings');
                 savedPerson = JSON.parse(savedPerson);
                 var name = savedPerson.name.split(' ');
                 $scope.fnamePlaceholder = name[0];
                 $scope.lnamePlaceholder = name[1];
-                $scope.emailPlaceHolder = savedPerson.email;
+                $scope.emailPlaceholder = savedPerson.email;
             }
 
             $scope.changeSettings = function () {
