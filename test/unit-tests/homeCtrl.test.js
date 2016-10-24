@@ -18,7 +18,7 @@
         });
 
         it('should have a sub header text', function () {
-            expect(scope.subHeaderText).toEqual('Click on the menu items to exlplore.');
+            expect(scope.subHeaderText).toEqual('Click on the navigation items to exlplore.');
         });
 
     });

@@ -42,7 +42,7 @@
             };
 
             // Keyboard events
-            window.addEventListener('keydown', function (e) {
+            $('body').keydown(function (e) {
                 if (e.which === 38) {
                     $scope.moveDirection('up');
                 } else if (e.which === 40) {

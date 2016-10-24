@@ -7,6 +7,6 @@
         function HomeCtrl ($scope) {
             var vm = this;
             $scope.introTitle = 'Welcome';
-            $scope.subHeaderText = 'Click on the menu items to exlplore.';
+            $scope.subHeaderText = 'Click on the navigation items to exlplore.';
         }
 })();

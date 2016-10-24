@@ -13,7 +13,7 @@ module.exports = function(config) {
         'bower_components/angular-route/angular-route.min.js',
         'bower_components/angular-mocks/angular-mocks.js',
         'bower_components/angular-filter/dist/angular-filter.min.js',
-        '/socket.io/socket.io.js',
+        'socket.io/socket.io.js',
         'public/js/**/**.js',
         'test/**/**.js'
     ],
@@ -48,13 +48,13 @@ module.exports = function(config) {
 
     autoWatch: true,
 
-    browsers: ['PhantomJS'],
+    browsers: ['PhantomJS', 'Chrome'],
 
     phantomjsLauncher: {
         exitOnResourceError: true
     },
 
-    singleRun: true,
+    singleRun: false,
 
     concurrency: Infinity
   })
