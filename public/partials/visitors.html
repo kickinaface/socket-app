@@ -1,0 +1,33 @@
+<div class="container mainContent">
+    <h1>Visitors</h1>
+    <p class="lead">
+        Showing all connected users. The list is grouped by common email addresses.
+        If a user has multiple tabs of this web app running and they have entered their
+        profile settings, the users will be groupped together displaying multple alphanumeric sockets.
+        Users who have not added their name and email address are grouped together and display their
+        sockets.
+    </p>
+    <ul ng-repeat="user in users | groupBy:'email' | toArray:true | orderBy:'name'">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span ng-if="user.$key == 'undefined'">
+                    No email provided
+                </span>
+                <span ng-if="user.$key != 'undefined'">
+                    <b><a href="mailto:{{user.$key}}">{{user.$key}}</a></b>
+                </span>
+
+            </div>
+            <div class="panel-body">
+                <!-- <p>
+                    <b>Name: </b> {{user[0].name}}
+                </p> -->
+                <b>Sockets:</b>
+                <li ng-repeat="item in user">
+                    <i>{{item.id}}</i>
+                </li>
+
+            </div>
+        </div>
+    </ul>
+</div>

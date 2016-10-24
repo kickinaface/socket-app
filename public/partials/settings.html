@@ -1,0 +1,73 @@
+<div class="container mainContent">
+    <h1>Profile Settings</h1>
+    <p class="lead">
+        You can add your first name, last name and email address to customize your profile settings.
+    </p>
+    <form ng-submit="changeSettings()">
+        <div class="form-group col-md-6">
+            <label for="fname">First Name</label>
+            <input
+                type="text"
+                class="form-control"
+                id="fname"
+                aria-describedby="formHelp"
+                placeholder="{{fnamePlaceholder}}"
+                required="true"
+                ng-model="settings.firstName">
+            <small id="formHelp" class="form-text text-muted">Please enter your first name</small>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="lname">Last Name</label>
+            <input
+                type="text"
+                class="form-control"
+                id="lname"
+                aria-describedby="formHelp"
+                placeholder="{{lnamePlaceholder}}"
+                required="true"
+                ng-model="settings.lastName">
+            <small id="formHelp" class="form-text text-muted">Please enter your last name</small>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="exampleInputEmail1">Email address</label>
+            <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="{{emailPlaceHolder}}"
+                required="true"
+                ng-model="settings.email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="submitBtn">Press/Click Save Settings</label>
+            <button type="submit" id="submitBtn" class="btn btn-primary btn-lg btn-block">Save Settings</button>
+        </div>
+
+    </form>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Save Changes</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure you wish to change your settings?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="saveChanges()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

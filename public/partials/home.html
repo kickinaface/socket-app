@@ -1,0 +1,13 @@
+<div class="container mainContent" ng-controller="TestCtrl as vm">
+    <h1>{{vm.introTitle}}</h1>
+    <p class="lead">
+        {{vm.subHeaderText}}
+    </p>
+    <h4>Random Messages</h4>
+    <ul>
+        <li ng-repeat="post in vm.list">
+            <strong>{{post.from}} said:</strong>
+            {{post.message}}
+        </li>
+    </ul>
+</div>

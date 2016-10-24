@@ -1,0 +1,20 @@
+.mainContent {
+    margin: 0 auto;
+    margin-top: 85px;
+}
+    .mainContent ul {
+        padding: 0;
+        list-style: none;
+    }
+
+/* interactive styles */
+.directions {
+    margin-bottom: 20px;
+}
+.usersList li{
+    display: block;
+    border-radius: 70px;
+    float: left;
+    position: absolute;
+    box-shadow: 0px 5px 10px;
+}

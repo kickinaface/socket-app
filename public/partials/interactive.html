@@ -1,0 +1,45 @@
+<div class="container mainContent">
+    <h1>Interactive</h1>
+    <p class="lead">
+
+        Look for your name and socket.id. Change direction <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+        of your circle by pressing the keys associated or use the keyboard arrow keys to navigate.
+    </p>
+    <h4>Navigation Directions</h4>
+    <div class="btn-group directions well" role="group">
+        <button type="button" class="btn btn-default" ng-click="moveDirection('left')">
+            <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
+            Left
+        </button>
+        <button type="button" class="btn btn-default" ng-click="moveDirection('up')">
+            <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+            Up
+        </button>
+        <button type="button" class="btn btn-default" ng-click="moveDirection('down')">
+            <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+            Down
+        </button>
+        <button type="button" class="btn btn-default" ng-click="moveDirection('right')">
+            <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+            Right
+        </button>
+    </div>
+
+    <p>
+        <ul class="usersList" ng-repeat="user in users">
+            <li style="margin-top:{{user.y}}px; margin-left:{{user.x}}px">
+                <button type="button" class="btn btn-primary" name="button">
+                    {{user.name}}
+                    <br>
+                    {{user.id}}
+                    <!-- <span class="name">{{user.name}}</span>
+                    <span class="socket">{{user.id}}</span> -->
+                </button>
+            </li>
+        </ul>
+    </p>
+
+</div>
