@@ -5,7 +5,8 @@
         .config(function ($routeProvider, $locationProvider) {
             $routeProvider
             .when('/', {
-                templateUrl: 'partials/home.html'
+                templateUrl: 'partials/home.html',
+                controller: 'HomeCtrl'
             })
             .when('/settings', {
                 templateUrl: 'partials/settings.html',
