@@ -14,8 +14,12 @@
                 linkLocation: '/visitors',
             },
             {
-                linkName: 'Profile',
+                linkName: 'Profile Settings',
                 linkLocation: '/settings'
+            },
+            {
+                linkName: 'Messages',
+                linkLocation: '/messages'
             }
         ];
 
@@ -28,13 +32,15 @@
                 $(toggleBtn).trigger('click');
             }
         };
+
+        $scope.numMessages = ctrl.numMessages;
     }
     angular.module('socket-app').component('navigation', {
         templateUrl: 'js/components/navigation.tpl.html',
         controller: NavigationComponent,
         bindings: {
-            // title: '@',
-            // fullScreen: '<',
+            numMessages: '='
+            // numMessages: '<',
             // width: '=',
             // height: '=',
             // credits: '@',
