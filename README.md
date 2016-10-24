@@ -13,6 +13,9 @@ $ node main
 
 Navigate to: `http://localhost:8800`
 
+### Demo Site
+Check out the demonstration site here https://socket-app-demo.herokuapp.com/
+
 ### Interactive
 Click on the navigation tab to see other users on the site. Use the arrow keys or the navigation buttons to move the direction of your button. See the others move as they interact with the page.
 
