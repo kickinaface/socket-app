@@ -4,6 +4,21 @@
         Displaying messages sent to you from other sockets.
     </p>
     <ul ng-repeat="message in messages">
-        <li>{{message}}</li>
+        <li>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p>
+                        <b>From:</b>
+                        {{message.fromName}}
+
+                        <b>Socket ID:</b>
+                        <i>{{message.from}}</i>
+                    </p>
+                </div>
+                <div class="panel-body">
+                    {{message.message}}
+                </div>
+            </div>
+        </li>
     </ul>
 </div>

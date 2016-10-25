@@ -21,8 +21,7 @@
                         name: 'No name',
                         id: $scope.clientId,
                         x: 0,
-                        y: 0,
-                        messages: []
+                        y: 0
                     }
                 } else {
                     // otherwise, use what is in local storage
@@ -30,7 +29,6 @@
                     savedPerson.id = $scope.clientId;
                     savedPerson.x = 0;
                     savedPerson.y = 0;
-                    savedPerson.messages = [];
                 }
 
                 socket.emit('user joined', savedPerson );

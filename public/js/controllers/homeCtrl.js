@@ -8,6 +8,5 @@
             var vm = this;
             $scope.introTitle = 'Welcome';
             $scope.subHeaderText = 'Click on the navigation items to exlplore.';
-            $scope.numMessages = 0;
         }
 })();

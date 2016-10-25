@@ -18,11 +18,25 @@
             }
 
             function sendMessageTo(message, fromId) {
-                socket.emit('new message', {
+                var savedPerson = localStorage.getItem('settings');
+                var preparedMessage = {};
+
+                if (!savedPerson) {
+                    savedPerson = {
+                        name: 'No name'
+                    }
+                } else {
+                    savedPerson = JSON.parse(savedPerson);
+                }
+
+                preparedMessage = {
                     to: clientToSendTo,
                     from: fromId,
+                    fromName: savedPerson.name,
                     message: message
-                });
+                }
+
+                socket.emit('new message', preparedMessage);
                 closeMessageDialog();
             };
             return {

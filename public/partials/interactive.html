@@ -34,9 +34,12 @@
                 <div class="well">
                     <strong>{{user.name}}</strong>
                     <p><small>{{user.id}}</small></p>
-                    <button type="button" class="btn btn-success btn-xs" ng-click="sendMessage()">Send a Message</button>
+                    <button
+                        type="button"
+                        class="btn btn-success btn-xs"
+                        ng-click="sendMessage()"
+                        ng-if="user.id != clientId">Send a Message</button>
                 </div>
-
             </li>
         </ul>
     </p>

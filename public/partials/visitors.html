@@ -25,7 +25,11 @@
                 <b>Sockets:</b>
                 <li ng-repeat="item in user" class="visitorsList">
                     <i>{{item.id}}</i>
-                    <button type="button" class="btn btn-success btn-xs" ng-click="sendMessage(item.id)">Send a Message</button>
+                    <button
+                        type="button"
+                        class="btn btn-success btn-xs"
+                        ng-click="sendMessage(item.id)"
+                        ng-if="item.id != clientId">Send a Message</button>
                 </li>
 
             </div>
