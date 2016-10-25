@@ -11,10 +11,14 @@
 .directions {
     margin-bottom: 20px;
 }
-.usersList li{
+.usersList li {
     display: block;
-    border-radius: 70px;
     float: left;
     position: absolute;
-    box-shadow: 0px 5px 10px;
+    text-align: center;
+}
+
+/* visitors styles */
+.visitorsList{
+    padding-bottom: 5px;
 }

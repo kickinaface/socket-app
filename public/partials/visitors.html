@@ -23,8 +23,9 @@
                     <b>Name: </b> {{user[0].name}}
                 </p> -->
                 <b>Sockets:</b>
-                <li ng-repeat="item in user">
+                <li ng-repeat="item in user" class="visitorsList">
                     <i>{{item.id}}</i>
+                    <button type="button" class="btn btn-success btn-xs">Send a Message</button>
                 </li>
 
             </div>
