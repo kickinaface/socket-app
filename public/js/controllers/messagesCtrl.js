@@ -4,8 +4,15 @@
         .module('socket-app')
         .controller('MessagesCtrl', MessagesCtrl);
 
-        function MessagesCtrl ($scope, SocketFactory) {
+        function MessagesCtrl ($scope, MessagesFactory) {
             var vm = this;
-            console.log('load messages');
+
+            $scope.submitSendMessage = function () {
+                MessagesFactory.sendMessageTo($scope.messageform.message, $scope.clientId);
+            };
+
+            $scope.resetTextArea = function () {
+                $scope.messageform.message = '';
+            };
         }
 })();

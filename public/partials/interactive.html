@@ -34,11 +34,13 @@
                 <div class="well">
                     <strong>{{user.name}}</strong>
                     <p><small>{{user.id}}</small></p>
-                    <button type="button" class="btn btn-success btn-xs">Send a Message</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="sendMessage()">Send a Message</button>
                 </div>
 
             </li>
         </ul>
     </p>
-
 </div>
+
+<!-- include dialog template -->
+<ng-include src="'/partials/message.modal.tpl.html'"></ng-include>

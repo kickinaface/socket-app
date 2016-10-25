@@ -17,6 +17,9 @@
             // Take care of what happens when users move their direction
             handleDirectionChange(io, socket);
 
+            // Handle messages
+            handleUserMessages(io, socket);
+
             // Handle user disconnection
             handleDisconnect(io, socket);
 
@@ -61,6 +64,16 @@
                 }
             }
         });
+    };
+
+    function handleUserMessages(io, socket) {
+        socket.on('new message', function (newMessage) {
+            if (io.sockets.connected[newMessage.to]) {
+                io.sockets.connected[newMessage.to].emit('get messages', newMessage);
+            } else {
+                // Throw an error as there is no user by that id.
+            }
+        })
     };
 
     function handleDisconnect(io, socket) {

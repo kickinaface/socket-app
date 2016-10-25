@@ -1,3 +1,9 @@
 <div class="container mainContent">
-    Show messages
+    <h1>Messages</h1>
+    <p class="lead">
+        Displaying messages sent to you from other sockets.
+    </p>
+    <ul ng-repeat="message in messages">
+        <li>{{message}}</li>
+    </ul>
 </div>

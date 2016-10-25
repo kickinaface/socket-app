@@ -32,19 +32,12 @@
                 $(toggleBtn).trigger('click');
             }
         };
-
-        $scope.numMessages = ctrl.numMessages;
     }
     angular.module('socket-app').component('navigation', {
         templateUrl: 'js/components/navigation.tpl.html',
         controller: NavigationComponent,
         bindings: {
             numMessages: '='
-            // numMessages: '<',
-            // width: '=',
-            // height: '=',
-            // credits: '@',
-            // url: '@'
         }
     });
 }());

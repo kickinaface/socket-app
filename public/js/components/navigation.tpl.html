@@ -14,7 +14,7 @@
                 <li ng-class="{ active: isActive(item.linkLocation) }">
                     <a ng-if="item.linkName == 'Messages'" href="{{item.linkLocation}}" ng-click="closeDrawer()">
                         {{item.linkName}}
-                        <span class="badge">{{numMessages}}</span>
+                        <span class="badge">{{$ctrl.numMessages}}</span>
                     </a>
                     <a ng-if="item.linkName != 'Messages'" href="{{item.linkLocation}}" ng-click="closeDrawer()">{{item.linkName}}</a>
                 </li>

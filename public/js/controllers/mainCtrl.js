@@ -7,6 +7,7 @@
         function MainCtrl ($scope, SocketFactory) {
             var vm = this;
             var socket = SocketFactory.getSocket();
+            var messagesArray = [];
             // At first page load, get the client id from socket.io
             // store the client id for later and then send back the
             // data to socket.io to store for list update
@@ -36,6 +37,12 @@
             });
 
             // Handle new messages coming in
-            $scope.numMessages = 0;
+            socket.on('get messages', function (message) {
+                messagesArray.push(message);
+                $scope.messages = messagesArray;
+
+                $scope.numMessages = $scope.messages.length;
+                $scope.$apply();
+            });
         }
 })();

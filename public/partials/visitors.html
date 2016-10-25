@@ -25,10 +25,13 @@
                 <b>Sockets:</b>
                 <li ng-repeat="item in user" class="visitorsList">
                     <i>{{item.id}}</i>
-                    <button type="button" class="btn btn-success btn-xs">Send a Message</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="sendMessage(item.id)">Send a Message</button>
                 </li>
 
             </div>
         </div>
     </ul>
 </div>
+
+<!-- include dialog template -->
+<ng-include src="'/partials/message.modal.tpl.html'"></ng-include>
