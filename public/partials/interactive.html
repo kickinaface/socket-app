@@ -37,8 +37,10 @@
                     <button
                         type="button"
                         class="btn btn-success btn-xs"
-                        ng-click="sendMessage()"
-                        ng-if="user.id != clientId">Send a Message</button>
+                        ng-click="sendMessage(user.id)"
+                        ng-if="user.id != clientId">
+                        Send a Message
+                    </button>
                 </div>
             </li>
         </ul>

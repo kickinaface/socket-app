@@ -55,8 +55,8 @@
             });
 
             // Bring up message dialog
-            $scope.sendMessage = function () {
-                MessagesFactory.openMessageDialog();
+            $scope.sendMessage = function (id) {
+                MessagesFactory.openMessageDialog(id);
             }
         }
 })();

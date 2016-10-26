@@ -7,18 +7,28 @@
         <li>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <p>
-                        <b>From:</b>
-                        {{message.fromName}}
+                    <b>From:</b>
+                    {{message.fromName}}
 
-                        <b>Socket ID:</b>
-                        <i>{{message.from}}</i>
-                    </p>
+                    <b>Socket ID:</b>
+                    <i>{{message.from}}</i>
                 </div>
                 <div class="panel-body">
                     {{message.message}}
                 </div>
+                <div class="panel-footer">
+                    <button
+                        type="button"
+                        class="btn btn-success btn-xs"
+                        ng-click="sendMessage(message.from)">
+                        Reply
+                    </button>
+                </div>
             </div>
         </li>
     </ul>
+    <span ng-if="!messages">There are no messages</span>
 </div>
+
+<!-- include dialog template -->
+<ng-include src="'/partials/message.modal.tpl.html'"></ng-include>
