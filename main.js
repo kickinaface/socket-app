@@ -32,6 +32,10 @@ app.get('/settings', function (req, res) {
 
 app.get('/interactive', function (req, res) {
     res.redirect('/#/interactive');
+});
+
+app.get('/messages', function (req, res) {
+    res.redirect('/#/messages');
 })
 
 /*

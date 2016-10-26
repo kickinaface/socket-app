@@ -24,19 +24,21 @@
         <script src="/js/controllers/settingsCtrl.js"></script>
         <script src="/js/controllers/visitorsCtrl.js"></script>
         <script src="/js/controllers/interactiveCtrl.js"></script>
+        <script src="/js/controllers/messagesCtrl.js"></script>
 
         <!-- Directives/Components -->
         <script src="/js/components/navigation.component.js"></script>
 
         <!-- Factories -->
         <script src="/js/factories/socket.factory.js"></script>
+        <script src="/js/factories/messages.factory.js"></script>
 
         <!-- Set Base url for routing -->
         <base href="/">
     </head>
     <body ng-app="socket-app" ng-controller="MainCtrl">
         <!-- navigation bar -->
-        <navigation></navigation>
+        <navigation num-messages="numMessages"></navigation>
         <!-- main content -->
         <ng-view></ng-view>
     </body>

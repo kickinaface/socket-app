@@ -31,15 +31,21 @@
     <p>
         <ul class="usersList" ng-repeat="user in users">
             <li style="margin-top:{{user.y}}px; margin-left:{{user.x}}px">
-                <button type="button" class="btn btn-primary" name="button">
-                    {{user.name}}
-                    <br>
-                    {{user.id}}
-                    <!-- <span class="name">{{user.name}}</span>
-                    <span class="socket">{{user.id}}</span> -->
-                </button>
+                <div class="well">
+                    <strong>{{user.name}}</strong>
+                    <p><small>{{user.id}}</small></p>
+                    <button
+                        type="button"
+                        class="btn btn-success btn-xs"
+                        ng-click="sendMessage(user.id)"
+                        ng-if="user.id != clientId">
+                        Send a Message
+                    </button>
+                </div>
             </li>
         </ul>
     </p>
-
 </div>
+
+<!-- include dialog template -->
+<ng-include src="'/partials/message.modal.tpl.html'"></ng-include>

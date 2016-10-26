@@ -19,6 +19,10 @@
             .when('/interactive', {
                 templateUrl: 'partials/interactive.html',
                 controller: 'InteractiveCtrl'
+            })
+            .when('/messages', {
+                templateUrl: 'partials/messages.html',
+                controller: 'MessagesCtrl'
             });
 
             $locationProvider.html5Mode(true);

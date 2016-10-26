@@ -14,8 +14,12 @@
                 linkLocation: '/visitors',
             },
             {
-                linkName: 'Profile',
+                linkName: 'Profile Settings',
                 linkLocation: '/settings'
+            },
+            {
+                linkName: 'Messages',
+                linkLocation: '/messages'
             }
         ];
 
@@ -33,12 +37,7 @@
         templateUrl: 'js/components/navigation.tpl.html',
         controller: NavigationComponent,
         bindings: {
-            // title: '@',
-            // fullScreen: '<',
-            // width: '=',
-            // height: '=',
-            // credits: '@',
-            // url: '@'
+            numMessages: '='
         }
     });
 }());

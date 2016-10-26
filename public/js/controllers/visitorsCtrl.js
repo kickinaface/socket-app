@@ -4,7 +4,7 @@
         .module('socket-app')
         .controller('VisitorsCtrl', VisitorsCtrl);
 
-        function VisitorsCtrl ($scope, SocketFactory) {
+        function VisitorsCtrl ($scope, SocketFactory, MessagesFactory) {
             var vm = this;
             var socket = SocketFactory.getSocket();
             socket.emit('getUsers');
@@ -12,5 +12,9 @@
                 $scope.users = users.users;
                 $scope.$apply();
             });
+
+            $scope.sendMessage = function (id) {
+                MessagesFactory.openMessageDialog(id);
+            }
         }
 })();

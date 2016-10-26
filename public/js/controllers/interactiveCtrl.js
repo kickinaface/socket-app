@@ -4,7 +4,7 @@
         .module('socket-app')
         .controller('InteractiveCtrl', InteractiveCtrl);
 
-        function InteractiveCtrl ($scope, SocketFactory) {
+        function InteractiveCtrl ($scope, SocketFactory, MessagesFactory) {
             var vm = this;
             var socket = SocketFactory.getSocket();
             socket.emit('getUsers');
@@ -53,5 +53,10 @@
                     $scope.moveDirection('right');
                 }
             });
+
+            // Bring up message dialog
+            $scope.sendMessage = function (id) {
+                MessagesFactory.openMessageDialog(id);
+            }
         }
 })();
