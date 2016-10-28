@@ -17,6 +17,9 @@
             // Take care of what happens when users move their direction
             handleDirectionChange(io, socket);
 
+            // Public chat for all users
+            handleChatMessage(io, socket);
+
             // Handle messages
             handleUserMessages(io, socket);
 
@@ -63,6 +66,15 @@
                     // No user found possible error to throw
                 }
             }
+        });
+    };
+
+    function handleChatMessage(io, socket) {
+        // User sends a chat message
+        socket.on('sendChatMessage', function(data) {
+            // Broadcast chat message to all users
+            io.emit('chatMessageReceived', data);
+            console.log(data.chatMessage);
         });
     };
 

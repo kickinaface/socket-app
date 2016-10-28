@@ -1,4 +1,6 @@
 <div class="container mainContent">
+<!-- iteractive -->
+<div class="col-md-8">
     <h1>Interactive</h1>
     <p class="lead">
 
@@ -45,6 +47,36 @@
             </li>
         </ul>
     </p>
+</div>
+
+<!-- chat messenger -->
+<div class="col-md-4">
+    <form ng-submit='sendChatMessage()'>
+        <div class='input-group'>
+            <input class='input-sm form-control'
+            ng-model='chatMessage'
+            type='text'
+            placeholder="Type a message...">
+                <span class='input-group-btn'>
+            <input class='input-sm btn btn-default'
+            type='submit'
+            value='Send'>
+            </span>
+        </div>
+    </form>
+    <br>
+    <div class='well chatbox' id='chat_history'>
+        <ul class='list-unstyled'>
+            <li ng-repeat='m in chatMessages'>
+                <i class='fa fa-comment'></i>
+                &nbsp;
+                <b>{{m.from}} </b>:
+                &nbsp;
+                {{m.chatMessage}}
+            </li>
+        </ul>
+    </div>
+</div>
 </div>
 
 <!-- include dialog template -->
