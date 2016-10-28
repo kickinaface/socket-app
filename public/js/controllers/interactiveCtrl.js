@@ -14,10 +14,13 @@
             socket.on('updateUsers', function (users) {
                 $scope.users = users.users;
                 $scope.$apply();
-                setMyUserName($scope.users);
+                if ($scope.myUserName == '') {
+                    setMyUserName($scope.users);
+                }
             });
             socket.on('chatMessageReceived', function(data) {
                 $scope.chatMessages.push(data);
+                $scope.$apply();
             });
 
             $scope.sendChatMessage = function() {

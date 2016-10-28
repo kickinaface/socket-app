@@ -74,7 +74,6 @@
         socket.on('sendChatMessage', function(data) {
             // Broadcast chat message to all users
             io.emit('chatMessageReceived', data);
-            console.log(data.chatMessage);
         });
     };
 
