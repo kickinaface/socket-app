@@ -60,6 +60,11 @@
                 }
             };
 
+            // Bring up message dialog
+            $scope.sendMessage = function (id) {
+                MessagesFactory.openMessageDialog(id);
+            };
+
             // Keyboard events
             $('body').keydown(function (e) {
                 if (e.which === 38) {

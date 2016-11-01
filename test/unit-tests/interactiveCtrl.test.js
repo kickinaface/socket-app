@@ -2,12 +2,11 @@
     'use strict';
     describe('Controller: InteractiveCtrl', function () {
 
-        var scope, direction;
+        var scope, direction, messageToId;
 
         beforeEach(module('socket-app'));
 
-        beforeEach(inject(function ($rootScope, $controller, $q) {
-            var defer = $q.defer();
+        beforeEach(inject(function ($rootScope, $controller) {
             scope = $rootScope.$new();
 
             scope.clientId = 'fakeId12344';
@@ -27,7 +26,6 @@
 
                             },
                             on: function (type, data) {
-                                var defer = $q.defer();
                                 if (type === 'updateUsers') {
                                     scope.users = [{
                                         email: 'chris@ccarteronline.com',
@@ -37,6 +35,11 @@
                                 }
                             }
                         }
+                    }
+                },
+                MessagesFactory: {
+                    openMessageDialog: function (id) {
+                        messageToId = id;
                     }
                 }
             });
@@ -88,6 +91,13 @@
             expect(direction.x).toEqual(10);
             expect(direction.y).toEqual(0);
 
+        });
+
+        it('should tell MessagesFactory to open the message dialog', function () {
+            var id = 'i123js9s9a03n203sajfl';
+
+            scope.sendMessage(id);
+            expect(messageToId).toEqual(id);
         });
 
     });

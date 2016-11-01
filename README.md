@@ -23,4 +23,7 @@ Click on the navigation tab to see other users on the site. Use the arrow keys o
 Click on the visitors tab to see all connected sockets. They are grouped by email address if entered and display and update upon user joining and leaving the page.
 
 ### Profile
-Click on the profile tab to change your identity. Enter your first name, last name and email address to be used for sorting.
+Click on the profile tab to change your identity. Enter your first name, last name and email address to be used for sorting. These settings are stored in the browser's local storage
+
+### Messages
+Click on the messages tab to see all messages sent to you from other users/sockets. Messages will be cleared upon page refresh and update as they are sent.

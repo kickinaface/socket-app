@@ -2,50 +2,70 @@
     'use strict';
     describe('Controller: MainCtrl', function () {
 
-        var scope, savedPerson, socketFactory, clientId, fakeClientId;
+        var scope, socketFactory, fakeClientId, mockedMessages, socket;
 
         beforeEach(module('socket-app'));
 
-        beforeEach(inject(function ($rootScope, $controller, $q) {
+        beforeEach(inject(function ($rootScope, $controller) {
             scope = $rootScope.$new();
             fakeClientId = '1928282jsjslfj3';
+            mockedMessages = [
+                {
+                    from: 'RznxgbK-_BDhRMowAAAJ',
+                    fromName: 'No name',
+                    message: 'This is the test message',
+                    to: 'EmV-3fFXeO6EbBQqAAAG'
+                },
+                {
+                    from: 'Ku2PCIVlWmsIj7cRAAAP',
+                    fromName: 'John Doe',
+                    message: 'Hello message from John',
+                    to: 'EmV-3fFXeO6EbBQqAAAG'
+                }
+            ];
 
             socketFactory = {
                 getSocket: function () {
                     return {
                         io: function () {},
                         emit: function (type, data) {
-                            console.log(type);
-                            console.log(data);
                             if (type === 'getClientId') {
-                                scope.clientId = fakeClientId;
+                                this.on('clientId', fakeClientId);
+                            } else if (type === 'get messages') {
+                                this.on('get messages', data);
                             }
 
                         },
                         on: function (type, data) {
                             if (type === 'clientId') {
-                                //console.log(data);
-                                clientId = data.id;
+                                scope.clientId = data;
+                            } else if (type === 'get messages') {
+                                scope.messages = data;
                             }
                         }
                     }
                 }
-            }
+            };
 
-            //spyOn(socketFactory, 'getSocket');
+            socket = socketFactory.getSocket();
+
             $controller('MainCtrl', {
                 $scope: scope,
-                SocketFactory: socketFactory
+                SocketFactory: socketFactory,
+                socket: socket
             });
 
         }));
 
         it('should get the clientId', function () {
-            console.log(scope.clientId);
-            //expect(clientId).toEqual('fakeID1238381');
+            socket.emit('getClientId', fakeClientId);
+            expect(scope.clientId).toEqual(fakeClientId);
         });
 
-
+        it('should get the messages', function () {
+            socket.emit('get messages', mockedMessages);
+            expect(scope.messages).toEqual(mockedMessages);
+        });
 
     });
 
