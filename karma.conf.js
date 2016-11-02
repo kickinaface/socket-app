@@ -51,7 +51,7 @@ module.exports = function(config) {
     browsers: ['PhantomJS'],
 
     phantomjsLauncher: {
-        exitOnResourceError: true
+        exitOnResourceError: false
     },
 
     singleRun: false,
